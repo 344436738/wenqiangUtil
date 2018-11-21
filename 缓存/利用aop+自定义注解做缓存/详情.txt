@@ -1,0 +1,17 @@
+	 <dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache-core</artifactId>
+			<version>2.4.3</version>
+		</dependency>
+		
+
+<bean class="org.jeecgframework.web.system.service.impl.EhcacheService"/>
+
+
+
+
+CacheServiceI.java   接口类   实现类  【EhcacheService，RedisCacheService】
+
+利用springAop  的环绕自定义 注解  标注到要缓存的方法上
+
+Ehcache  自定义注解

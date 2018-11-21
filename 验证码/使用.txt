@@ -1,0 +1,9 @@
+<servlet>
+		<servlet-name>ValidateCodeServlet</servlet-name>
+		<servlet-class>com.thinkgem.jeesite.common.servlet.ValidateCodeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ValidateCodeServlet</servlet-name>
+		<url-pattern>/servlet/validateCodeServlet</url-pattern>
+	</servlet-mapping>
+	

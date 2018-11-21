@@ -1,0 +1,16 @@
+ 
+ 注入：
+ 
+ <bean id="idWorker" class="util.IdWorker">
+    	<constructor-arg index="0" value="0"></constructor-arg>
+    	<constructor-arg index="1" value="0"></constructor-arg>
+ </bean>
+ 
+ 
+ 
+ 
+ @Autowired
+private IdWorker idWorker;
+
+
+long orderId = idWorker.nextId();	//获取ID	

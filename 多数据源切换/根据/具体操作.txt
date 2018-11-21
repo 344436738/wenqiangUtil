@@ -1,0 +1,1 @@
+DynamicDataSource.setDataSource(DataSourceEnum.MASTER.getName());      在每个操作mapper 之前设置数据源

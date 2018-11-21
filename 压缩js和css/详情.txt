@@ -1,0 +1,21 @@
+1. 利用工具压缩完js或者css   .gzcss  .gzjs 后缀
+
+
+2.配置web.xml 增加个filter 
+
+ <filter>
+      <filter-name>GzipFilter</filter-name>
+      <filter-class>bhz.com.util.GzipFilter</filter-class>
+      <init-param>
+          <param-name>headers</param-name>
+          <param-value>Content-Encoding=gzip</param-value>
+      </init-param>
+  </filter>
+  <filter-mapping>
+      <filter-name>GzipFilter</filter-name>
+      <url-pattern>*.gzjs</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+      <filter-name>GzipFilter</filter-name>
+      <url-pattern>*.gzcss</url-pattern>
+  </filter-mapping>

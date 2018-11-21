@@ -1,0 +1,26 @@
+	 //使用excel导出流量报表
+		TemplateExcelUtil excelUtil = new TemplateExcelUtil();
+		// 流量报表excel模板在类包中，转为流给excelutil
+		InputStream in = FileUtil.getResourceAsStream("com/leimingtech/cms/controller/Statistics/statPannelExcel.xls");
+		excelUtil.openModal(in);
+		excelUtil.writeStringToCell(1, 0, "日期："+data+"  分类："+data1); // 在第二行加入时间等信息
+		int i = 3;
+		for(Map<String,Object> m : mapList){
+			excelUtil.writeStringToCell(i, 0, m.get("publishedby").toString()); // 人员
+			excelUtil.writeStringToCell(i, 1, m.get("counts").toString()); // 发稿量
+			excelUtil.writeStringToCell(i, 2, m.get("pv").toString()); // 访问量
+			excelUtil.writeStringToCell(i, 3, m.get("count1").toString()); // 评论量
+			excelUtil.writeStringToCell(i, 4, m.get("grade").toString()); // 评分
+			i++;
+		}
+		// saas 版导出目录用户上下文目录access文件夹
+		String filename = "";
+		String codedFileName = "renyuantongji";
+		File file = new File(ResourceUtil.getSysPath()+"\\temp\\"+filename);
+		if (!file.exists()){
+			file.mkdirs();
+		}
+		SimpleDateFormat t = new SimpleDateFormat("yyyyMMddHHmmss");
+		try {
+			filename = codedFileName+"-"+t.format(new Date())+ ".xls";
+			excelUtil.writeToFile(ResourceUtil.getSysPath()+"\\temp\\" + filename);//写
