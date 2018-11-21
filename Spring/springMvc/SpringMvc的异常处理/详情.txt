@@ -1,0 +1,2 @@
+<bean id="exceptionHandler"
+		class="org.jeecgframework.core.common.exception.GlobalExceptionResolver" />
