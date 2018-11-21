@@ -1,0 +1,16 @@
+          //扫描Src目录下
+		Set<Class<?>> classSet = PackagesToScanUtil.getClasses(".*");
+		for (Class<?> clazz : classSet) {
+			//判断当前类是否设置了菜单注解
+			//未设置菜单注解就算在该类的方法上设置了菜单操作按钮注解也不进行菜单操作按钮的匹配
+			if (clazz.isAnnotationPresent(AutoMenu.class)) {
+				AutoMenu autoMenu = clazz.getAnnotation(AutoMenu.class);
+				}
+			//获取该类的所有方法
+			Method[] methods = clazz.getDeclaredMethods();
+			for(Method method : methods){
+						//判断当前方法是否设置了菜单操作按钮注解
+						if (method.isAnnotationPresent(AutoMenuOperation.class)) {
+							AutoMenuOperation autoMenuOperation = method.getAnnotation(AutoMenuOperation.class);
+                     } 							
+	   }
