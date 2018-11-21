@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<struts>
+   <formbeans>
+      <bean name="pojo" class="demo.pojo.demoPojo"/>
+   </formbeans>
+   <action-mapping>
+      <action name="pojo" type="demo.action.demoAction" path="/add">
+          <forword name="chenggong" viwe="/viwe/chenggong.jsp"></forword>
+          <forword name="shibai" viwe="/viwe/shibai.jsp"></forword>
+      </action>
+   </action-mapping>
+</struts>
