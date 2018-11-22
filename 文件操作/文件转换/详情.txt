@@ -1,0 +1,4 @@
+在webapp 下建个目录  swftools   装上 exe文件
+
+
+SwfToolsUtil.convert2SWF(文件路劲);  //进行转换
